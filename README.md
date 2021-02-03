@@ -9,9 +9,13 @@
 # Game shatel by C
 <hr />
 <img src="./madia/simple.gif" /><br />
+
 ## The game is not complete, I will be happy if you complete it
+
 <br />
+
 ###### The Tasks
+
 <br />
 
 - [x] Environment preparation
