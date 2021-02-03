@@ -4,7 +4,7 @@
 #define MAX_Y 20
 #define MAX_X 75
 #include <time.h>
-#include "./include/show.h"
+#include "./show.c"
 #include "./include/em.h"
 
 
