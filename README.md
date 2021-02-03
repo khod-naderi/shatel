@@ -6,12 +6,12 @@
 <img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed/khod-naderi/shatel">
 </p><br />
 
-#Game shatel by C
+# Game shatel by C
 <hr />
 <img src="./madia/simple.gif" /><br />
-**The game is not complete, I will be happy if you complete it**
+## The game is not complete, I will be happy if you complete it
 <br />
-*(The Tasks)*<br />
+### (The Tasks)<br />
 - [x] Environment preparation
 - [x] Build a shatel and move
 - [x] Shuttle shooting
