@@ -11,7 +11,9 @@
 <img src="./madia/simple.gif" /><br />
 ## The game is not complete, I will be happy if you complete it
 <br />
-### (The Tasks)<br />
+### The Tasks
+<br />
+
 - [x] Environment preparation
 - [x] Build a shatel and move
 - [x] Shuttle shooting
