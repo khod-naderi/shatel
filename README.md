@@ -8,5 +8,14 @@
 
 #Game shatel by C
 <hr />
-<img src="./madia/simple.gif" />
-<br /><b>The game is not complete, I will be happy if you complete it</b>
+<img src="./madia/simple.gif" /><br />
+**The game is not complete, I will be happy if you complete it**
+<br />
+*(The Tasks)*<br />
+- [x] Environment preparation
+- [x] Build a shatel and move
+- [x] Shuttle shooting
+- [ ] Build the enemy
+- [ ] Logical calculations
+- [ ] Show points and health and shot
+- [ ] Add multi-threaded processing
