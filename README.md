@@ -8,7 +8,7 @@
 
 # Game shatel by C
 <hr />
-<img src="./madia/simple.gif" /><br />
+<img src="./media/simple.gif" /><br />
 
 ## The game is not complete, I will be happy if you complete it
 
