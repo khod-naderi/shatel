@@ -14,7 +14,19 @@
 
 <br />
 
-### The Tasks
+### Tasks in Community Edition Version
+
+<br />
+
+- [x] Environment preparation
+- [x] Build a shatel and move
+- [x] Shuttle shooting
+- [x] Build the enemy
+- [x] Logical calculations
+- [ ] Show points and health and shot
+- [x] multi-threaded processing
+
+### Tasks in old Version
 
 <br />
 
