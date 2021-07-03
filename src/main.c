@@ -1,4 +1,9 @@
-#include <conio.h>
+#ifndef _WIN32
+#   include <conio.h>
+#else
+#   include <curses.h>
+#endif
+
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX_Y 20
