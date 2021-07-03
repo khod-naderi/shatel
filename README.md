@@ -14,6 +14,10 @@
 
 <br />
 
+> :warning: Due to a major issue with the older version, we are now working on the Community Edition 
+
+<br />
+
 ### Tasks in Community Edition Version
 
 <br />
