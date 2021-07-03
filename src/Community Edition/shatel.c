@@ -1,3 +1,9 @@
+/**
+ * @file
+ * @brief [Shatel:Community Edition]
+ * @author [Ali Naderi](https://github.com/khod-naderi)
+*/
+
 #include <stdio.h>
 #include <pthread.h>
 #include <stdlib.h>
@@ -20,7 +26,10 @@ char world[MAX_Y][MAX_X];
 
 
 
-
+/**
+ * @brief Function flushWorld (void)
+ * Responsible for Flush World Buffer
+*/
 void flushWorld(){
     for(int y = 0; y < MAX_Y; y++){
         for(int x = 0; x < MAX_X; x++){
@@ -29,6 +38,10 @@ void flushWorld(){
     }
 }
 
+/**
+ * @brief Function draw (void)
+ * Responsible for Render World
+*/
 void* draw(void *arg){
     while (1){
         system(CLRSCR);
@@ -36,26 +49,26 @@ void* draw(void *arg){
             for(int x = 0; x < MAX_X; x++){
                 switch(world[y][x]){
                     case 1: 
-                        printf("@");
+                        printf("@"); // paddel
                         break;
                     case 2:
-                        printf("*");
+                        printf("*"); // Bullet
                         break;
                     case 3:
                     case 4:
-                        printf("#");
+                        printf("#"); // Enemy
                         break;
                     case 5:
-                        printf("^");
+                        printf("^"); // paddel
                         break;
                     case 6:
-                        printf("<");
+                        printf("<"); // paddel
                         break;
                     case 7:
-                        printf(">");
+                        printf(">"); // paddel 
                         break;
                     default:
-                        printf(" ");
+                        printf(" "); // empty 
                         break;
                 }
             }
@@ -65,8 +78,12 @@ void* draw(void *arg){
     }
 }
 
+/**
+ * @brief Function showPaddel (void)
+ * Responsible for write paddel date in world buffer
+*/
 void showPaddel(int x){
-    for(int i = 0; i < MAX_X; i++){
+    for(int i = 0; i < MAX_X; i++){ // clear old paddel
         world[MAX_Y-1][i] = 0;
         world[MAX_Y-2][i] = 0;
     }
@@ -78,19 +95,23 @@ void showPaddel(int x){
     world[MAX_Y-1][x+4] = 7;
 }
 
+/**
+ * @brief Function showPaddel (void)
+ * Responsible for Game logic 
+*/
 void* rigidbody(void *arg){
     while(1){
         for(int y = 0; y < MAX_Y; y++){
             for(int x = 0; x < MAX_X; x++){
                 switch(world[y][x]){
-                    case 2:
+                    case 2: // is bullet
                         world[y][x] = 0;
                         if(y != 0) world[y-1][x] = 2;
                         break;
-                    case 3:
-                        if (y == MAX_Y-4) exit(1);
+                    case 3: // is enemy
+                        if (y == MAX_Y-4) exit(1); // game over
                         world[y][x] = 0;
-                        if (world[y+1][x] != 2)  world[y+1][x] = 4;
+                        if (world[y+1][x] != 2)  world[y+1][x] = 4; // Survive if not treated with bullets
                         break;
 
                 }
@@ -103,6 +124,10 @@ void* rigidbody(void *arg){
     }
 }
 
+/**
+ * @brief Function showEnemy (void)
+ * Responsible for write enemy date in world buffer per 2 sec
+*/
 void* showEnemy(){
     while(1){
         for(int i = 8; i < MAX_X-8; i++){
@@ -112,6 +137,10 @@ void* showEnemy(){
     }
 }
 
+/**
+ * @brief Main function
+ * @returns 0 on exit
+ */
 int main(int argc, char *argv[]){
     srand(time(0));
 
@@ -127,18 +156,18 @@ int main(int argc, char *argv[]){
     pthread_create(&rigidbodyThread, NULL, &rigidbody, NULL);
     
 
-    int xPaddel = 20;
+    int xPaddel = 20; // location paddel
     while (1) {
-        if(kbhit()){
+        if(kbhit()){ // key is press ?
             switch(getch()){
-                case 77: 
+                case 77: // arrow r
                     if (xPaddel+7 <= MAX_X) xPaddel+=2; 
                     break;
-                case 75: 
+                case 75: // arrow l
                     if (xPaddel-7 >= 0) xPaddel-=2;
                     break;
-                case 32:
-                    world[MAX_Y-3][xPaddel] = 2;
+                case 32: // space
+                    world[MAX_Y-3][xPaddel] = 2; // write bullet data in world buffer
                     world[MAX_Y-3][xPaddel-1] = 2;
                     world[MAX_Y-3][xPaddel+1] = 2;
                     break;
